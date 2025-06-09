@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Neon Rotating Clock</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="clock-container">
+    <div class="ring" id="date-ring"></div>
+    <div class="ring" id="month-ring"></div>
+    <div class="ring" id="day-ring"></div>
+    <div class="center-clock">
+      <div class="hand hour-hand"></div>
+      <div class="hand minute-hand"></div>
+      <div class="hand second-hand"></div>
+    </div>
+  </div>
+
+  <div class="digital-clock" id="digital-clock"></div>
+
+  <!-- Color Palette Button -->
+  <button id="theme-btn">🎨</button>
+
+  <!-- Hidden Palette -->
+  <div class="color-palette" id="color-palette">
+    <div class="color-option" style="background: #0f0;" data-color="#0f0"></div>
+    <div class="color-option" style="background: #00f;" data-color="#00f"></div>
+    <div class="color-option" style="background: #f0f;" data-color="#f0f"></div>
+    <div class="color-option" style="background: #ff0;" data-color="#ff0"></div>
+    <div class="color-option" style="background: cyan;" data-color="cyan"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

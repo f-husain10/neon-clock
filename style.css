@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+  background: #000;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: 'Orbitron', sans-serif;
+  color: #0f0;
+}
+
+.clock-container {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 2px solid rgba(0, 255, 0, 0.2);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+  animation: rotate 60s linear infinite;
+}
+
+#date-ring {
+  width: 400px;
+  height: 400px;
+  animation-duration: 90s;
+}
+
+#month-ring {
+  width: 300px;
+  height: 300px;
+  animation-duration: 60s;
+}
+
+#day-ring {
+  width: 200px;
+  height: 200px;
+  animation-duration: 45s;
+}
+
+.label {
+  position: absolute;
+  color: #888;
+  font-size: 13px;
+  text-transform: uppercase;
+  transform-origin: center center;
+  transition: all 0.3s;
+}
+
+.label.active {
+  color: #0f0;
+  text-shadow: 0 0 5px #0f0, 0 0 10px #0f0;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.center-clock {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 130px;
+  height: 130px;
+  margin-left: -65px;
+  margin-top: -65px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #222 40%, #000);
+  box-shadow: 0 0 25px #0f0, 0 0 50px rgba(0, 255, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hand {
+  position: absolute;
+  transform-origin: bottom center;
+  border-radius: 2px;
+}
+
+.hour-hand {
+  width: 5px;
+  height: 35px;
+  background: #0f0;
+  box-shadow: 0 0 8px #0f0;
+}
+
+.minute-hand {
+  width: 3px;
+  height: 50px;
+  background: #0f0;
+  box-shadow: 0 0 6px #0f0;
+}
+
+.second-hand {
+  width: 2px;
+  height: 60px;
+  background: red;
+  box-shadow: 0 0 6px red;
+}
+
+.digital-clock {
+  margin-top: 40px;
+  font-size: 32px;
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0;
+}
+
+@keyframes rotate {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+/* Stylish digital clock */
+.digital-clock {
+  margin-top: 40px;
+  font-size: 40px;
+  padding: 20px 50px;
+  border-radius: 20px;
+  background: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 25px #0f0, 0 0 40px rgba(0, 255, 0, 0.5);
+  text-shadow: 0 0 15px #0f0, 0 0 25px #0f0;
+  transition: all 0.5s ease;
+}
+
+/* Theme button */
+#theme-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  font-size: 26px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 50%;
+  background: #222;
+  color: #0f0;
+  box-shadow: 0 0 15px #0f0;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 100;
+}
+
+#theme-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Color palette container */
+.color-palette {
+  position: fixed;
+  bottom: 80px;
+  right: 30px;
+  display: none;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 99;
+}
+
+.color-option {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px #fff;
+  transition: 0.3s;
+}
+
+.color-option:hover {
+  transform: scale(1.2);
+}
