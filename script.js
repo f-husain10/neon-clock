@@ -5,7 +5,6 @@ const dates = Array.from({ length: 31 }, (_, i) => (i + 1).toString().padStart(2
 // Create rings dynamically
 function createRing(ringId, items, radius) {
   const ring = document.getElementById(ringId);
-  ring.innerHTML = '';  // Clear existing labels (if any)
   const count = items.length;
   items.forEach((item, index) => {
     const label = document.createElement("div");
@@ -33,10 +32,9 @@ function updateClock() {
   const minute = now.getMinutes();
   const second = now.getSeconds();
 
-  // Add 90 degrees offset to align hands correctly
-  document.querySelector(".hour-hand").style.transform = `rotate(${(hour % 12) * 30 + minute / 2 + 90}deg)`;
-  document.querySelector(".minute-hand").style.transform = `rotate(${minute * 6 + 90}deg)`;
-  document.querySelector(".second-hand").style.transform = `rotate(${second * 6 + 90}deg)`;
+  document.querySelector(".hour-hand").style.transform = `rotate(${(hour % 12) * 30 + minute / 2}deg)`;
+  document.querySelector(".minute-hand").style.transform = `rotate(${minute * 6}deg)`;
+  document.querySelector(".second-hand").style.transform = `rotate(${second * 6}deg)`;
 
   // Highlight active date, month, day
   highlightActive("date-ring", now.getDate() - 1);
